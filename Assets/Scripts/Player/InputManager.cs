@@ -7,6 +7,7 @@ public class InputManager : MonoBehaviour {
     [SerializeField] Movement movement;
     [SerializeField] MouseLook mouseLook;
     [SerializeField] PlayerInteractingScript playerInteracting;
+    [SerializeField] PlayerWeaponScript playerShooting;
 
     PlayerControls controls;
     PlayerControls.GroundMovementActions groundMovement;
@@ -29,6 +30,11 @@ public class InputManager : MonoBehaviour {
 
         groundMovement.Run.started += ctx => movement.setIsRunning(true);
         groundMovement.Run.canceled += ctx => movement.setIsRunning(false);
+        
+        groundMovement.Shoot.started += ctx => playerShooting.isShooting = true;
+        groundMovement.Shoot.canceled += ctx => playerShooting.isShooting = false;
+        
+        groundMovement.Reload.started += ctx => playerShooting.Reload();
         
         groundMovement.Interact.performed += ctx => playerInteracting.InteractWithFirstInteractable();
     }
