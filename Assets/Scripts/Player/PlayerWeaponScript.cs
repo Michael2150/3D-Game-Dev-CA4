@@ -101,6 +101,17 @@ public class PlayerWeaponScript : MonoBehaviour, IHitter
         }
     }
     
+    public int ReserveAmmo
+    {
+        get { return reserveAmmo; }
+        set
+        {
+            //clamp between 0 and maxAmmo
+            reserveAmmo = Mathf.Clamp(value, 0, maxAmmo);
+            ammoText.text = currentClip + " / " + reserveAmmo;
+        }
+    }
+    
     //Reloading
     public void Reload()
     {

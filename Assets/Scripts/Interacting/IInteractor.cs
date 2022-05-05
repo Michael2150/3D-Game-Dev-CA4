@@ -7,5 +7,5 @@ public interface IInteractor
 
     public List<IInteractable> GetInteractablesWithinRadius();
     
-    public GameObject InteractWithFirstInteractable();
+    public GameObject InteractWithFirstInteractableObject();
 }
