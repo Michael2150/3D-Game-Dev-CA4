@@ -45,22 +45,26 @@ public class EnemyAI : MonoBehaviour
         set
         {
             _state = value;
-
-            handleEnemyMovementState(value);
+            
+            switch (State)
+            {
+                case EnemyState.Dead:
+                    return;
+                case EnemyState.Roaming:
+                    enemyAIMovement.isChasing = false;
+                    break;
+                case EnemyState.Chasing:
+                    enemyAIMovement.isChasing = true;
+                    break;
+                case EnemyState.Attacking:
+                    break;
+            }
         }
     }
 
-    private void handleEnemyMovementState(EnemyState value)
-    {
-
-    }
-    
     public int Health
     {
-        get
-        {
-            return currentHealth;
-        }
+        get => currentHealth;
         set
         {
             //Make sure the health is between 0 and 100
