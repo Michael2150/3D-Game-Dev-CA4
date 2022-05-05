@@ -26,20 +26,33 @@ public class PlayerInteractingScript : MonoBehaviour, IInteractor
         return interactables;
     }
 
-    public GameObject InteractWithFirstInteractable()
+    public GameObject InteractWithFirstInteractableObject()
     {
         Collider[] colliders = Physics.OverlapSphere(transform.position, _interactRadius);
         foreach (Collider collider in colliders)
         {
             //Get all the Components from the collider's gameobject
-            IInteractable interactable = collider.GetComponent<IInteractable>();
-            if (interactable != null)
+            IInteractable[] ints = collider.GetComponents<IInteractable>();
+            if (ints.Length > 0) //If there are any IInteractable components
             {
-                interactable.Interact(this.gameObject);
+                foreach (IInteractable inte in ints)
+                {
+                    //If the component is an IInteractable, interact with it
+                    if (inte != null)
+                        inte.Interact(this.gameObject);
+                }
+
                 return collider.gameObject;
             }
         }
 
         return null;
+    }
+    
+    //Draw a gizmo to show the radius of the interactable
+    public void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, _interactRadius);
     }
 }

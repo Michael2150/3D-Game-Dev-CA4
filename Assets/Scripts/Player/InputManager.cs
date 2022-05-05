@@ -36,7 +36,7 @@ public class InputManager : MonoBehaviour {
         
         groundMovement.Reload.started += ctx => playerShooting.Reload();
         
-        groundMovement.Interact.performed += ctx => playerInteracting.InteractWithFirstInteractable();
+        groundMovement.Interact.performed += ctx => playerInteracting.InteractWithFirstInteractableObject();
     }
 
     private void Update ()
