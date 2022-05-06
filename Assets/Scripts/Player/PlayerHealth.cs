@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerHealth : MonoBehaviour
+public class PlayerHealth : MonoBehaviour, IHittable
 {
     //getter and setter for player health
-    [SerializeField] private int health = 100;
+    [SerializeField] private float health = 100;
     [SerializeField] private Text healthText;
     
     void Start()
@@ -14,7 +14,7 @@ public class PlayerHealth : MonoBehaviour
         Health = 100;
     }
     
-    public int Health
+    public float Health
     {
         get
         {
@@ -39,5 +39,10 @@ public class PlayerHealth : MonoBehaviour
     {
         //Destroy the player
         Debug.LogWarning("Player is dead");
+    }
+
+    public void Hit(GameObject hittingObject, IHitter hitter)
+    {
+        Health -= hitter.getHitDamage();
     }
 }

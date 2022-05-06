@@ -1,8 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.ProBuilder.MeshOperations;
-using UnityEngine.Serialization;
 
 public class EnemyAI : MonoBehaviour, IHittable
 {
@@ -13,6 +10,7 @@ public class EnemyAI : MonoBehaviour, IHittable
     private EnemyState _state;
 
     [SerializeField] EnemyAIMovement enemyAIMovement;
+    [SerializeField] EnemyAttackScript enemyAttackScript;
     [SerializeField] Animator animator;
 
     // Start is called before the first frame update
@@ -28,6 +26,8 @@ public class EnemyAI : MonoBehaviour, IHittable
         switch (State)
         {
             case EnemyState.Dead:
+                
+                
                 return; //If the enemy is dead, do nothing
             
             case EnemyState.Roaming:
@@ -51,7 +51,9 @@ public class EnemyAI : MonoBehaviour, IHittable
                 break;
             
             case EnemyState.Attacking:
-                break;  
+                if (attackCoroutine == null)
+                    attackCoroutine = StartCoroutine(Attack());
+                break;
         }
     }
 
@@ -60,26 +62,53 @@ public class EnemyAI : MonoBehaviour, IHittable
         get => _state;
         set
         {
-            _state = value;
-            switch (State)
+            if (_state != value)
             {
-                case EnemyState.Dead:
-                    animator.SetTrigger("Die");
-                    return;
-                case EnemyState.Roaming:
-                    enemyAIMovement.isChasing = false;
-                    animator.SetTrigger("Walk");
-                    break;
-                case EnemyState.Chasing:
-                    enemyAIMovement.isChasing = true;
-                    animator.SetTrigger("Run");
-                    break;
-                case EnemyState.Attacking:
-                    animator.SetTrigger("Attack");
-                    break;
+                _state = value;
+                switch (State)
+                {
+                    case EnemyState.Dead:
+                        animator.SetTrigger("Die");
+                        return;
+                    case EnemyState.Roaming:
+                        enemyAIMovement.isChasing = false;
+                        animator.SetTrigger("Walk");
+                        break;
+                    case EnemyState.Chasing:
+                        enemyAIMovement.isChasing = true;
+                        animator.SetTrigger("Run");
+                        break;
+                    case EnemyState.Attacking:
+                        animator.SetTrigger("Attack");
+                        break;
+                }   
             }
         }
     }
+    
+    Coroutine attackCoroutine = null;
+    //Attack the player coroutine
+    IEnumerator Attack()
+    {
+        //Get the length of the attack animation
+        float attackLength = animator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
+        
+        //Wait half the attack length
+        yield return new WaitForSeconds(attackLength / 2);
+        
+        //Run the player attack script
+        enemyAttackScript.Attack(enemyAIMovement.attackRange);
+        
+        //Wait for the animation to finish
+        yield return new WaitForSeconds(attackLength / 2);
+        
+        //Return to chasing state
+        State = EnemyState.Chasing;
+        
+        //Reset the attack coroutine
+        attackCoroutine = null;
+    }
+
 
     public float Health
     {
@@ -97,7 +126,10 @@ public class EnemyAI : MonoBehaviour, IHittable
 
     public void Hit(GameObject hittingObject, IHitter hitter)
     {
-        //If the hitting object is the player, then the player is hit
+        //Log the hitting object tag
+        Debug.Log(hittingObject.tag);
+        
+        //Check if the hitting object is the player
         if (hittingObject.CompareTag("Player"))
             Health -= hitter.getHitDamage();
     }

@@ -19,5 +19,9 @@ public class ResetPosScript : MonoBehaviour
     {
         transform.localPosition = startPos;
         transform.localRotation = startRot;
+        
+        //Disable the script when the death animation is playing
+        if (GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Dying"))
+            this.enabled = false;
     }
 }

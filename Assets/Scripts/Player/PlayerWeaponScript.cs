@@ -69,10 +69,7 @@ public class PlayerWeaponScript : MonoBehaviour, IHitter
         //Play random gun sound if there is any
         if (gunSounds.Count > 0)
             gunSounds[Random.Range(0, gunSounds.Count)].Play();
-
-        //Handle Ammo
-        CurrentClip--;
-
+        
         //Handle the hitscan raycast
         RaycastHit hit;
         if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit, 100f))
@@ -88,6 +85,9 @@ public class PlayerWeaponScript : MonoBehaviour, IHitter
             if (hitEffects.Count > 0)
                 Instantiate(hitEffects[Random.Range(0, hitEffects.Count)], hit.point, Quaternion.LookRotation(hit.normal));
         }
+        
+        //Handle Ammo
+        CurrentClip--;
     }
     
     //current clip getter and setter

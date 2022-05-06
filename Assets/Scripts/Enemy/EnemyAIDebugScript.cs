@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,16 +10,23 @@ public class EnemyAIDebugScript : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        //Draw the field of view
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position, enemyAIMovement.fovRadius);
-        
-        drawFOV();
-        DrawTargetLine();
-        
-        //Draw the attack range
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, enemyAIMovement.attackRange);
+        try
+        {
+            //Draw the field of view
+            Gizmos.color = Color.blue;
+            Gizmos.DrawWireSphere(transform.position, enemyAIMovement.fovRadius);
+
+            drawFOV();
+            DrawTargetLine();
+
+            //Draw the attack range
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, enemyAIMovement.attackRange);
+        }
+        catch (Exception e)
+        {
+            return;
+        }
     }
 
     private void drawFOV()
@@ -47,7 +55,14 @@ public class EnemyAIDebugScript : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        drawFOV();
-        DrawTargetLine();
+        try
+        {
+            drawFOV();
+            DrawTargetLine();
+        }
+        catch (Exception e)
+        {
+            return;
+        }
     }
 }
