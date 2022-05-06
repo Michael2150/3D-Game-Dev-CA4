@@ -26,8 +26,7 @@ public class EnemyAI : MonoBehaviour, IHittable
         switch (State)
         {
             case EnemyState.Dead:
-                
-                
+                enemyAIMovement.isDead = true;
                 return; //If the enemy is dead, do nothing
             
             case EnemyState.Roaming:

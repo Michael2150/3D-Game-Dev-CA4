@@ -37,6 +37,7 @@ public class EnemyAIMovement : MonoBehaviour
     private void Start()
     {
         lastKnownTargetPosition = transform.position;
+        isDead = false;
     }
     
     //Update
@@ -142,6 +143,12 @@ public class EnemyAIMovement : MonoBehaviour
 
     //Check if the enemy is in the attackRange and within the fov of the enemy
     public bool withinAttackRange { get => (Vector3.Distance(target.position, transform.position) <= attackRange) && isTargetWithinFOV; }
+
+    public bool isDead
+    {
+        get => !agent.enabled;
+        set => agent.enabled = !value;
+    }
 
     private Vector3 randomNavMeshPoint(float radius)
     {
