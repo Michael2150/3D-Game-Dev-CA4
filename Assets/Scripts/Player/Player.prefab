@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 27723067}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24,8 +24,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 27723066}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0, y: 2.1966, z: -0.0419}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 1081501327}
   m_Father: {fileID: 1615724011102788908}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 220534726}
   - component: {fileID: 220534728}
   - component: {fileID: 220534727}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: HealthCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 233986157}
   - component: {fileID: 233986159}
   - component: {fileID: 233986158}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Count
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 407039489}
   - component: {fileID: 407039488}
   - component: {fileID: 407039487}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,7 +328,7 @@ GameObject:
   - component: {fileID: 445374229}
   - component: {fileID: 445374231}
   - component: {fileID: 445374230}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: AmmoCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -407,7 +407,7 @@ GameObject:
   - component: {fileID: 526241547}
   - component: {fileID: 526241546}
   - component: {fileID: 526241545}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -507,7 +507,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 685897390}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -541,7 +541,7 @@ GameObject:
   - component: {fileID: 894014310}
   - component: {fileID: 894014312}
   - component: {fileID: 894014311}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Image (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -616,7 +616,7 @@ GameObject:
   - component: {fileID: 973389236}
   - component: {fileID: 973389238}
   - component: {fileID: 973389237}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Crosshair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -695,7 +695,7 @@ GameObject:
   - component: {fileID: 1046736042}
   - component: {fileID: 1046736041}
   - component: {fileID: 1046736040}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: EventSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -771,7 +771,7 @@ GameObject:
   - component: {fileID: 1081501330}
   - component: {fileID: 1081501329}
   - component: {fileID: 1081501328}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -865,7 +865,7 @@ GameObject:
   - component: {fileID: 1082695494}
   - component: {fileID: 1082695496}
   - component: {fileID: 1082695495}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Image (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -942,7 +942,7 @@ GameObject:
   - component: {fileID: 1129312687}
   - component: {fileID: 1129312686}
   - component: {fileID: 1129312689}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1069,7 +1069,7 @@ GameObject:
   - component: {fileID: 1328447010}
   - component: {fileID: 1328447012}
   - component: {fileID: 1328447011}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1148,7 +1148,7 @@ GameObject:
   - component: {fileID: 1527143390}
   - component: {fileID: 1527143392}
   - component: {fileID: 1527143391}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Count
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1229,7 +1229,7 @@ GameObject:
   - component: {fileID: 1678004056}
   - component: {fileID: 1678004058}
   - component: {fileID: 1678004057}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1304,7 +1304,7 @@ GameObject:
   - component: {fileID: 1887617051}
   - component: {fileID: 1887617053}
   - component: {fileID: 1887617052}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1379,7 +1379,7 @@ GameObject:
   - component: {fileID: 1998978383}
   - component: {fileID: 1998978385}
   - component: {fileID: 1998978384}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1459,9 +1459,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4632969559322822354}
   - component: {fileID: 3170775766472581576}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Weapon
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1521,7 +1521,7 @@ GameObject:
   - component: {fileID: 1615724009487545450}
   - component: {fileID: 1615724009487545444}
   - component: {fileID: 1615724009487545445}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1602,7 +1602,7 @@ GameObject:
   - component: {fileID: 1615724010315490953}
   - component: {fileID: 1615724010315490958}
   - component: {fileID: 1615724010315490959}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -1617,7 +1617,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1615724010315490956}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.1978, z: -0.018}
+  m_LocalPosition: {x: 0, y: 2.1978, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4632969559322822354}
@@ -1690,7 +1690,7 @@ GameObject:
   - component: {fileID: 1615724011102788911}
   - component: {fileID: 1194555383}
   - component: {fileID: 1381530970}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1823,7 +1823,7 @@ GameObject:
   - component: {fileID: 4624388937398404092}
   - component: {fileID: 2355378612106091072}
   - component: {fileID: 7471250200915015251}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: ReloadingImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1896,7 +1896,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1116365507357620424}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MuzzlePos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1927,6 +1927,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: fb98406df768fd347a74f32a4a7504cf, type: 3}
       propertyPath: m_Name
       value: M4_Carbine
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fb98406df768fd347a74f32a4a7504cf, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fb98406df768fd347a74f32a4a7504cf, type: 3}
       propertyPath: m_RootOrder
