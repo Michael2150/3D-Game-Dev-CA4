@@ -1,0 +1,183 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3968491140402791931
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2990831054599720365, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
+      propertyPath: m_Name
+      value: FemaleZombieEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 2990831054599720366, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2990831054599720366, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
+      propertyPath: Chasing_speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2990831054599720366, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
+      propertyPath: Roaming_speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2990831054599720366, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
+      propertyPath: Chasing_fovAngle
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2990831054599720366, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
+      propertyPath: Roaming_fovAngle
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 2990831054599720366, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
+      propertyPath: Chasing_fovRadius
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2990831054599720366, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
+      propertyPath: Chasing_rotationSpeed
+      value: 130
+      objectReference: {fileID: 0}
+    - target: {fileID: 2990831054599720366, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
+      propertyPath: Roaming_rotationSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2990831054599720367, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2990831054599720367, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -19.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 2990831054599720367, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2990831054599720367, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 12.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2990831054599720367, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.03051721
+      objectReference: {fileID: 0}
+    - target: {fileID: 2990831054599720367, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2990831054599720367, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.99953425
+      objectReference: {fileID: 0}
+    - target: {fileID: 2990831054599720367, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2990831054599720367, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2990831054599720367, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -183.498
+      objectReference: {fileID: 0}
+    - target: {fileID: 2990831054599720367, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4114915004998798210, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 4186840041959466775}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
+--- !u!4 &2203238048917997652 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2990831054599720367, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
+  m_PrefabInstance: {fileID: 3968491140402791931}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7741742168693316230
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2203238048917997652}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 8965db9663f0ccc42b17797282e85066, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8965db9663f0ccc42b17797282e85066, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8965db9663f0ccc42b17797282e85066, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8965db9663f0ccc42b17797282e85066, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8965db9663f0ccc42b17797282e85066, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8965db9663f0ccc42b17797282e85066, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8965db9663f0ccc42b17797282e85066, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8965db9663f0ccc42b17797282e85066, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8965db9663f0ccc42b17797282e85066, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8965db9663f0ccc42b17797282e85066, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8965db9663f0ccc42b17797282e85066, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8965db9663f0ccc42b17797282e85066, type: 3}
+      propertyPath: m_Name
+      value: Zombie_Female_Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 8965db9663f0ccc42b17797282e85066, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 37d1f782cca23434c9beea0392ce2615, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8965db9663f0ccc42b17797282e85066, type: 3}
+--- !u!1 &7471850760186996695 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8965db9663f0ccc42b17797282e85066, type: 3}
+  m_PrefabInstance: {fileID: 7741742168693316230}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &4186840041959466775 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 8965db9663f0ccc42b17797282e85066, type: 3}
+  m_PrefabInstance: {fileID: 7741742168693316230}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4028032436083717209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7471850760186996695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7d023387fcfe84383d2de2543d0221, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

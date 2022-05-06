@@ -13,6 +13,7 @@ public class EnemyAI : MonoBehaviour, IHittable
     private EnemyState _state;
 
     [SerializeField] EnemyAIMovement enemyAIMovement;
+    [SerializeField] Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,6 @@ public class EnemyAI : MonoBehaviour, IHittable
     // Update is called once per frame
     void Update()
     {
-        
         switch (State)
         {
             case EnemyState.Dead:
@@ -61,18 +61,21 @@ public class EnemyAI : MonoBehaviour, IHittable
         set
         {
             _state = value;
-            
             switch (State)
             {
                 case EnemyState.Dead:
+                    animator.SetTrigger("Die");
                     return;
                 case EnemyState.Roaming:
                     enemyAIMovement.isChasing = false;
+                    animator.SetTrigger("Walk");
                     break;
                 case EnemyState.Chasing:
                     enemyAIMovement.isChasing = true;
+                    animator.SetTrigger("Run");
                     break;
                 case EnemyState.Attacking:
+                    animator.SetTrigger("Attack");
                     break;
             }
         }
