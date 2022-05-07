@@ -17,7 +17,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2990831054599720365, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
       propertyPath: m_Name
-      value: FemaleZombieEnemy
+      value: FemaleZombieEnemy Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2990831054599720366, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
       propertyPath: target
@@ -103,6 +103,10 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 4186840041959466775}
+    - target: {fileID: 4114915004998798210, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
+      propertyPath: capsuleCollider
+      value: 
+      objectReference: {fileID: 396887712}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
 --- !u!1 &2203238048917997654 stripped

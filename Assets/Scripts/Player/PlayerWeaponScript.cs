@@ -15,7 +15,8 @@ public class PlayerWeaponScript : MonoBehaviour, IHitter
     [SerializeField] private float hitDamage = 10f;
     
     [SerializeField] private ParticleSystem muzzleFlashEffect;
-    [SerializeField] private List<AudioSource> gunSounds;
+    [SerializeField] private List<AudioClip> gunSounds;
+    [SerializeField] private AudioSource audioSource;
     [SerializeField] private GameObject EnemyHitEffect;
     [SerializeField] private GameObject ObjectHitEffect;
     
@@ -35,15 +36,21 @@ public class PlayerWeaponScript : MonoBehaviour, IHitter
     private void Start()
     {
         CurrentClip = maxClip;
-
         fillPools();
+        
+        audioSource = GetComponent<AudioSource>();
     }
 
     //Pooling
     private List<GameObject> enemyHitPool;
     private List<GameObject> objectHitPool;
+    private GameObject poolObject;
     private void fillPools()
     {
+        //Create the pool gameobject
+        poolObject = new GameObject("Pool");
+        poolObject.transform.SetParent(GameManager.Instance.transform);
+        
         //Fills the pool of enemy hit effects
         enemyHitPool = new List<GameObject>();
         objectHitPool = new List<GameObject>();
@@ -52,14 +59,14 @@ public class PlayerWeaponScript : MonoBehaviour, IHitter
         {
             if (EnemyHitEffect != null)
             {
-                GameObject newEnemyHit = Instantiate(EnemyHitEffect);
+                GameObject newEnemyHit = Instantiate(EnemyHitEffect, poolObject.transform, true);
                 newEnemyHit.SetActive(false);
                 enemyHitPool.Add(newEnemyHit);       
             }
 
             if (ObjectHitEffect != null)
             {
-                GameObject newObjectHit = Instantiate(ObjectHitEffect);
+                GameObject newObjectHit = Instantiate(ObjectHitEffect, poolObject.transform, true);
                 newObjectHit.SetActive(false);
                 objectHitPool.Add(newObjectHit);   
             }
@@ -98,8 +105,15 @@ public class PlayerWeaponScript : MonoBehaviour, IHitter
 
         //Play random gun sound if there is any
         if (gunSounds.Count > 0)
-            gunSounds[Random.Range(0, gunSounds.Count)].Play();
-        
+        {
+            //Play a random gun sound
+            audioSource.clip = gunSounds[Random.Range(0, gunSounds.Count)];
+            //Random pitch
+            audioSource.pitch = Random.Range(0.8f, 1.2f);
+            //Play the sound
+            audioSource.Play();
+        }
+
         //Handle the hitscan raycast
         RaycastHit hit;
         if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit, 100f))
@@ -136,10 +150,7 @@ public class PlayerWeaponScript : MonoBehaviour, IHitter
                 hitEffect.transform.position = hit.point;
                 hitEffect.transform.rotation = Quaternion.LookRotation(hit.normal);
                 hitEffect.SetActive(true);
-                
-                //Play the hit effect
-                //hitEffect.GetComponent<ParticleSystem>().Play();
-                
+
                 //Return the hit effect to the pool after it has played
                 StartCoroutine(ReturnHitEffect(hitEffect, hit));
             }

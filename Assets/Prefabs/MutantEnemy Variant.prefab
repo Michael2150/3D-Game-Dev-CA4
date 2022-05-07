@@ -100,7 +100,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2990831054599720365, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
       propertyPath: m_Name
-      value: MutantEnemy
+      value: MutantEnemy Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2990831054599720366, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
       propertyPath: target
@@ -162,6 +162,10 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 8060261981449383286}
+    - target: {fileID: 4114915004998798210, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
+      propertyPath: capsuleCollider
+      value: 
+      objectReference: {fileID: 1274748955}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
 --- !u!1 &6579273781281791811 stripped

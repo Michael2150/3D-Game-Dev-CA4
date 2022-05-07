@@ -12,6 +12,7 @@ public class EnemyAI : MonoBehaviour, IHittable
     [SerializeField] EnemyAIMovement enemyAIMovement;
     [SerializeField] EnemyAttackScript enemyAttackScript;
     [SerializeField] Animator animator;
+    [SerializeField] CapsuleCollider capsuleCollider;
 
     // Start is called before the first frame update
     void Start()
@@ -80,7 +81,10 @@ public class EnemyAI : MonoBehaviour, IHittable
                     case EnemyState.Attacking:
                         animator.SetTrigger("Attack");
                         break;
-                }   
+                }
+                
+                //Disable the collider when dead
+                capsuleCollider.enabled = State != EnemyState.Dead;
             }
         }
     }
