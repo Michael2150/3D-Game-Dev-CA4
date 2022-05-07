@@ -13,11 +13,11 @@ public class PlayerWeaponScript : MonoBehaviour, IHitter
     [SerializeField] private float reloadTime = 1.5f;
     [SerializeField] private float fireRate = 10f; //Rounds per second
     [SerializeField] private float hitDamage = 10f;
-
-    [SerializeField] private Transform muzzlePosition;
-    [SerializeField] private List<ParticleSystem> muzzleFlash;
+    
+    [SerializeField] private ParticleSystem muzzleFlashEffect;
     [SerializeField] private List<AudioSource> gunSounds;
-    [SerializeField] private List<GameObject> hitEffects;
+    [SerializeField] private GameObject EnemyHitEffect;
+    [SerializeField] private GameObject ObjectHitEffect;
     
     [SerializeField] private Text ammoText;
     [SerializeField] private Image reloadingBar;
@@ -61,10 +61,11 @@ public class PlayerWeaponScript : MonoBehaviour, IHitter
     public void Shoot()
     {
         //Play random muzzle flash on the position of the muzzle position and rotation of the muzzle position if there is any
-        if (muzzleFlash.Count > 0)
+        if (muzzleFlashEffect)
         {
-            muzzleFlash[Random.Range(0, muzzleFlash.Count)].Play();
+            muzzleFlashEffect.Play();
         }
+
 
         //Play random gun sound if there is any
         if (gunSounds.Count > 0)
@@ -81,9 +82,12 @@ public class PlayerWeaponScript : MonoBehaviour, IHitter
             if (hitObject != null)
                 hitObject.Hit(gameObject, this);
             
-            //Spawn a hit effect
-            if (hitEffects.Count > 0)
-                Instantiate(hitEffects[Random.Range(0, hitEffects.Count)], hit.point, Quaternion.LookRotation(hit.normal));
+            //Spawn the hit effect
+            GameObject hitEffect = Instantiate((hit.transform.tag == "Enemy") ? EnemyHitEffect : ObjectHitEffect, hit.point, Quaternion.LookRotation(hit.normal));
+            //Make the hit effect child of the hit object
+            hitEffect.transform.parent = hit.transform;
+            //Destroy the hit effect after 1 second
+            Destroy(hitEffect, 1f);
         }
         
         //Handle Ammo
