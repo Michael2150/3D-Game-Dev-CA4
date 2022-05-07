@@ -31,10 +31,39 @@ public class PlayerWeaponScript : MonoBehaviour, IHitter
     private bool isReloading = false;
 
     private float nextFire = 0f;
-    
+
     private void Start()
     {
         CurrentClip = maxClip;
+
+        fillPools();
+    }
+
+    //Pooling
+    private List<GameObject> enemyHitPool;
+    private List<GameObject> objectHitPool;
+    private void fillPools()
+    {
+        //Fills the pool of enemy hit effects
+        enemyHitPool = new List<GameObject>();
+        objectHitPool = new List<GameObject>();
+
+        for (int i = 0; i < 20; i++)
+        {
+            if (EnemyHitEffect != null)
+            {
+                GameObject newEnemyHit = Instantiate(EnemyHitEffect);
+                newEnemyHit.SetActive(false);
+                enemyHitPool.Add(newEnemyHit);       
+            }
+
+            if (ObjectHitEffect != null)
+            {
+                GameObject newObjectHit = Instantiate(ObjectHitEffect);
+                newObjectHit.SetActive(false);
+                objectHitPool.Add(newObjectHit);   
+            }
+        }
     }
 
     private void Update()
@@ -82,18 +111,54 @@ public class PlayerWeaponScript : MonoBehaviour, IHitter
             if (hitObject != null)
                 hitObject.Hit(gameObject, this);
             
-            //Spawn the hit effect
-            GameObject hitEffect = Instantiate((hit.transform.tag == "Enemy") ? EnemyHitEffect : ObjectHitEffect, hit.point, Quaternion.LookRotation(hit.normal));
-            //Make the hit effect child of the hit object
-            hitEffect.transform.parent = hit.transform;
-            //Destroy the hit effect after 1 second
-            Destroy(hitEffect, 1f);
+            //Grab a hit effect from the the enemy hit pool if it is an enemy or from the object hit pool if it is an object
+            GameObject hitEffect = null;
+            if (hit.transform.tag == "Enemy")
+            {
+                if (enemyHitPool.Count > 0)
+                {
+                    hitEffect = enemyHitPool[0];
+                    enemyHitPool.RemoveAt(0);
+                }
+            }
+            else
+            {
+                if (objectHitPool.Count > 0)
+                {
+                    hitEffect = objectHitPool[0];
+                    objectHitPool.RemoveAt(0);
+                }
+            }
+            
+            //If there is a hit effect, play it on the position of the hit and rotation of the hit
+            if (hitEffect != null)
+            {
+                hitEffect.transform.position = hit.point;
+                hitEffect.transform.rotation = Quaternion.LookRotation(hit.normal);
+                hitEffect.SetActive(true);
+                
+                //Play the hit effect
+                //hitEffect.GetComponent<ParticleSystem>().Play();
+                
+                //Return the hit effect to the pool after it has played
+                StartCoroutine(ReturnHitEffect(hitEffect, hit));
+            }
         }
         
         //Handle Ammo
         CurrentClip--;
     }
-    
+
+    private IEnumerator ReturnHitEffect(GameObject hitEffect, RaycastHit hit)
+    {
+        yield return new WaitForSeconds(0.5f);
+        hitEffect.SetActive(false);
+        if (hit.transform.tag == "Enemy")
+            enemyHitPool.Add(hitEffect);
+        else
+            objectHitPool.Add(hitEffect);
+    }
+
     //current clip getter and setter
     private int CurrentClip
     {

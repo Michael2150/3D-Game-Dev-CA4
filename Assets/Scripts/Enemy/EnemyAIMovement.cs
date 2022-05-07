@@ -43,8 +43,10 @@ public class EnemyAIMovement : MonoBehaviour
     //Update
     public void updateMovement()
     {
+        if (isDead)
+            return;
+        
         KnowTargetPosition = TargetPosKnown();
-
         agent.SetDestination(DestinationPos);
     }
 
