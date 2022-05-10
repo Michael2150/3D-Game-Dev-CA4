@@ -25,7 +25,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2990831054599720366, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
       propertyPath: attackRange
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2990831054599720366, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
       propertyPath: Chasing_speed

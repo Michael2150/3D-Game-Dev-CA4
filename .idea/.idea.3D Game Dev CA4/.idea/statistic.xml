@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Statistic">
+    <option name="excludedDirectories">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Animations" />
+        <option value="$PROJECT_DIR$/Assets/Audio" />
+        <option value="$PROJECT_DIR$/Assets/Etredal Fog" />
+        <option value="$PROJECT_DIR$/Assets/Materials" />
+        <option value="$PROJECT_DIR$/Assets/Models" />
+        <option value="$PROJECT_DIR$/Assets/Packages" />
+        <option value="$PROJECT_DIR$/Assets/Prefabs" />
+        <option value="$PROJECT_DIR$/Assets/Scenes" />
+        <option value="$PROJECT_DIR$/Assets/Terrain" />
+        <option value="$PROJECT_DIR$/Assets/UI" />
+        <option value="$PROJECT_DIR$/.git" />
+        <option value="$PROJECT_DIR$/.idea" />
+        <option value="$PROJECT_DIR$/.vs" />
+        <option value="$PROJECT_DIR$/Library" />
+        <option value="$PROJECT_DIR$/Logs" />
+        <option value="$PROJECT_DIR$/obj" />
+        <option value="$PROJECT_DIR$/Packages" />
+        <option value="$PROJECT_DIR$/ProjectSettings" />
+        <option value="$PROJECT_DIR$/Temp" />
+        <option value="$PROJECT_DIR$/UIElementsSchema" />
+        <option value="$PROJECT_DIR$/UserSettings" />
+      </list>
+    </option>
+  </component>
+</project>
