@@ -16,10 +16,13 @@ public class AmmoDropScript : MonoBehaviour, IInteractable
         PlayerWeaponScript playerWeaponScript = sender.GetComponentInChildren<PlayerWeaponScript>();
         if (playerWeaponScript)
             playerWeaponScript.ReserveAmmo += ammoToAdd;
+        
+        //Destroy the ammo drop
+        Destroy(gameObject);
     }
 
     public string getInteractableText()
     {
-        return $"Press E to pick up ${ammoToAdd} ammo";
+        return $"Press E to pick up {ammoToAdd} ammo";
     }
 }

@@ -18,6 +18,6 @@ public class HealthDropScript : MonoBehaviour, IInteractable
 
     public string getInteractableText()
     {
-        return $"Press E to pick up ${healthToAdd}% health";
+        return $"Press E to pick up {healthToAdd}% health";
     }
 }
