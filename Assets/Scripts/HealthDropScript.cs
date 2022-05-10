@@ -8,10 +8,11 @@ public class HealthDropScript : MonoBehaviour, IInteractable
 
     public void Interact(GameObject sender)
     {
-        //Go through all the children in the sender recursively and find the PlayerWeaponScript
-        PlayerWeaponScript playerWeaponScript = sender.GetComponentInChildren<PlayerWeaponScript>();
-        if (playerWeaponScript)
-            playerWeaponScript.ReserveAmmo += healthToAdd;
+        //if the sender has the PlayerHealth script
+        var playerHealth = sender.GetComponent<PlayerHealth>();
+        if (playerHealth != null)
+            //add health
+            playerHealth.Health += healthToAdd;
         
         Destroy(gameObject);
     }
