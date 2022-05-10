@@ -258,5 +258,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammoDropPrefab: {fileID: 4161402834780432358, guid: d9ece0237af2bc447882e8ee66c823c8, type: 3}
   healthDropPrefab: {fileID: 99340753925967705, guid: db82d1b6b6168c14c8c418e32a73bf8c, type: 3}
-  ammoDropChance: 0.7
-  healthDropChance: 0.3
+  ammoDropChance: 0.9
+  healthDropChance: 0.5

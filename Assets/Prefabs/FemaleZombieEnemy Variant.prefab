@@ -17,7 +17,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2990831054599720365, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
       propertyPath: m_Name
-      value: FemaleZombieEnemy Variant
+      value: FemaleZombieEnemy Variant (1)
       objectReference: {fileID: 0}
     - target: {fileID: 2990831054599720366, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
       propertyPath: target
@@ -61,15 +61,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2990831054599720367, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -24.900002
+      value: -798.526
       objectReference: {fileID: 0}
     - target: {fileID: 2990831054599720367, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 484.051
       objectReference: {fileID: 0}
     - target: {fileID: 2990831054599720367, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -35.84
+      value: -655.001
       objectReference: {fileID: 0}
     - target: {fileID: 2990831054599720367, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
       propertyPath: m_LocalRotation.w
@@ -107,6 +107,10 @@ PrefabInstance:
       propertyPath: capsuleCollider
       value: 
       objectReference: {fileID: 396887712}
+    - target: {fileID: 6546571540711589021, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
+      propertyPath: healthDropChance
+      value: 0.3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
 --- !u!1 &2203238048917997654 stripped

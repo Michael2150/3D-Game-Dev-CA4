@@ -23,6 +23,10 @@ public class EnemyAI : MonoBehaviour, IHittable
     // Update is called once per frame
     void Update()
     {
+        //If the player health is 0, then the player is dead
+        if (currentHealth <= 0)
+            State = EnemyState.Dead;
+        
         switch (State)
         {
             case EnemyState.Dead:
@@ -116,10 +120,6 @@ public class EnemyAI : MonoBehaviour, IHittable
         {
             //Make sure the health is between 0 and 100
             currentHealth = Mathf.Clamp(value, 0f, 100f);
-            
-            //If the player health is 0, then the player is dead
-            if (currentHealth == 0)
-                State = EnemyState.Dead;
         }
     }
 

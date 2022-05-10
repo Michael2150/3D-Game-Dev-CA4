@@ -100,7 +100,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2990831054599720365, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
       propertyPath: m_Name
-      value: MaleZombieEnemy Variant
+      value: MaleZombieEnemy Variant (1)
       objectReference: {fileID: 0}
     - target: {fileID: 2990831054599720366, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
       propertyPath: target
@@ -144,15 +144,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2990831054599720367, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -28.35
+      value: -821.3275
       objectReference: {fileID: 0}
     - target: {fileID: 2990831054599720367, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 487.43738
       objectReference: {fileID: 0}
     - target: {fileID: 2990831054599720367, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -31.109999
+      value: -861.09595
       objectReference: {fileID: 0}
     - target: {fileID: 2990831054599720367, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
       propertyPath: m_LocalRotation.w
@@ -186,6 +186,10 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 7419451496107612784}
+    - target: {fileID: 6546571540711589021, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
+      propertyPath: healthDropChance
+      value: 0.3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
 --- !u!1 &7940661425228373800 stripped

@@ -54,4 +54,41 @@ public class PlayerInteractTextScript : MonoBehaviour
         interactText.text = "";
         showTextCoroutine = null;
     }
+    
+    //Handle UI
+    [SerializeField] private Image fadeImage;
+    [SerializeField] public float fadeSpeed = 0.8f;
+    [SerializeField] public Text StoryText;
+
+    public void FadeToBlack()
+    {
+        StartCoroutine(toBlack());
+    }
+    
+    //Coroutine that fades to black
+    private IEnumerator toBlack()
+    {
+        fadeImage.color = Color.clear;
+        while (fadeImage.color.a < 1)
+        {
+            fadeImage.color = Color.Lerp(fadeImage.color, Color.black, fadeSpeed * Time.deltaTime);
+            yield return null;
+        }
+    }
+    
+    //Coroutine that fades to clear
+    public void FadeToClear()
+    {
+        StartCoroutine(toClear());
+    }
+
+    private IEnumerator toClear()
+    {
+        fadeImage.color = Color.black;
+        while (fadeImage.color.a > 0)
+        {
+            fadeImage.color = Color.Lerp(fadeImage.color, Color.clear, fadeSpeed * Time.deltaTime);
+            yield return null;
+        }
+    }
 }

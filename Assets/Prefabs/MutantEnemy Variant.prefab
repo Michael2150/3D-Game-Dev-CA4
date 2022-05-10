@@ -100,7 +100,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2990831054599720365, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
       propertyPath: m_Name
-      value: MutantEnemy Variant
+      value: MutantEnemy Variant (1)
       objectReference: {fileID: 0}
     - target: {fileID: 2990831054599720366, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
       propertyPath: target
@@ -116,15 +116,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2990831054599720367, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -30.92
+      value: -753.61066
       objectReference: {fileID: 0}
     - target: {fileID: 2990831054599720367, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 488.61737
       objectReference: {fileID: 0}
     - target: {fileID: 2990831054599720367, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -35.54
+      value: -835.8928
       objectReference: {fileID: 0}
     - target: {fileID: 2990831054599720367, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
       propertyPath: m_LocalRotation.w
@@ -168,7 +168,7 @@ PrefabInstance:
       objectReference: {fileID: 1274748955}
     - target: {fileID: 6546571540711589021, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
       propertyPath: ammoDropChance
-      value: 0.5
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 6546571540711589021, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
       propertyPath: ammoDropPrefab

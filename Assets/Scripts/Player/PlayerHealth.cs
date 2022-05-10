@@ -38,7 +38,7 @@ public class PlayerHealth : MonoBehaviour, IHittable
     void PlayerDead()
     {
         //Destroy the player
-        Debug.LogWarning("Player is dead");
+        GameManager.Instance.PlayerDead();
     }
 
     public void Hit(GameObject hittingObject, IHitter hitter)

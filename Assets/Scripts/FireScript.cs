@@ -23,7 +23,7 @@ public class FireScript : MonoBehaviour, IInteractable
             //Play the explosion particle system
             explosion.Play();
             //Play the explosion sound
-            AudioSource.PlayClipAtPoint(explosionSound, transform.position, 0.5f);
+            AudioSource.PlayClipAtPoint(explosionSound, transform.position, 0.4f);
         
             //Play the fire particle system
             fire.Play();
@@ -32,12 +32,14 @@ public class FireScript : MonoBehaviour, IInteractable
             audioSource.loop = true;
             audioSource.Play();
             
+            GameManager.Instance.lightFire();
+            
             isOn = true;
         }
     }
 
     public string getInteractableText()
     {
-        return "Press E to light the fire";
+        return isOn ? "" : "Press E to light the fire";
     }
 }
