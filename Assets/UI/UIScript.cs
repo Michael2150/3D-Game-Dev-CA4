@@ -25,9 +25,9 @@ public class UIScript : MonoBehaviour
         GameManager.Instance.loadLevel("ExternalScene");
     }
 
-    public void GameOver()
+    public void MenuScreen()
     {
-        GameManager.Instance.loadLevel("GameOverScene");
+        GameManager.Instance.loadLevel("StartScene");
     }
 
     public void Quit()

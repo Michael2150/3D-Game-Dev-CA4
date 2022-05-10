@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
         firesLit++;
         if (firesLit == FiresToLight)
         {
-            
+            StartCoroutine(GameWin());
         } else if (firesLit == 1)
         {
             StartCoroutine(doFirstFireStory());
@@ -113,11 +113,27 @@ public class GameManager : MonoBehaviour
             player.GetComponent<MouseLook>().enabled = false;
             ui.FadeToBlack();
             ShowStory("You died");
-            yield return new WaitForSeconds(Mathf.Max(ui.fadeSpeed+1f, storyTime+1f));
+            yield return new WaitForSeconds(Mathf.Max(ui.fadeSpeed+1f, storyTime));
             loadLevel("GameOverScene");
         }
     }
-    
+
+    private IEnumerator GameWin()
+    {
+        //Fade to black, Show "You won", and wait then load the Win scene
+        if (player)
+        {
+            var ui = player.GetComponent<PlayerInteractTextScript>();
+            isPlayerDead = true;
+            player.GetComponent<Movement>().enabled = false;
+            player.GetComponent<MouseLook>().enabled = false;
+            ui.FadeToBlack();
+            ShowStory("You won");
+            yield return new WaitForSeconds(Mathf.Max(ui.fadeSpeed + 1f, storyTime));
+            loadLevel("WinScene");
+        }
+    }
+
     public void ShowStory(string story)
     {
         if (player)
@@ -154,6 +170,4 @@ public class GameManager : MonoBehaviour
             Console.WriteLine(e);
         }
     }
-    
-    
 }
