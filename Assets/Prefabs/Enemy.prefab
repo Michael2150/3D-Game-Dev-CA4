@@ -55,7 +55,6 @@ MonoBehaviour:
   enemyAIMovement: {fileID: 2990831054599720366}
   enemyAttackScript: {fileID: 3042012846861968749}
   animator: {fileID: 0}
-  capsuleCollider: {fileID: 0}
 --- !u!114 &2990831054599720366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,5 +258,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammoDropPrefab: {fileID: 4161402834780432358, guid: d9ece0237af2bc447882e8ee66c823c8, type: 3}
   healthDropPrefab: {fileID: 99340753925967705, guid: db82d1b6b6168c14c8c418e32a73bf8c, type: 3}
-  ammoDropChance: 0.5
+  ammoDropChance: 0.7
   healthDropChance: 0.3
