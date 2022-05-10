@@ -118,8 +118,6 @@ public class PlayerWeaponScript : MonoBehaviour, IHitter
         RaycastHit hit;
         if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit, 100f))
         {
-            Debug.Log("Hit: " + hit.transform.name);
-            
             //See if the object has a IHittable interface
             IHittable hitObject = hit.transform.GetComponent<IHittable>();
             if (hitObject != null)
