@@ -47,6 +47,19 @@ public class InputManager : MonoBehaviour {
 
     private void OnEnable ()
     {
-        controls.Enable();
+        if (controls != null)
+            controls.Enable();
+    }
+    
+    private void OnDisable ()
+    {
+        if (controls != null)
+            controls.Disable();
+    }
+    
+    private void OnDestroy ()
+    {
+        if (controls != null)
+            controls.Disable();
     }
 }

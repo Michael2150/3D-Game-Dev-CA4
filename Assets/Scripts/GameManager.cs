@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -28,6 +29,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        SceneManager.sceneLoaded += OnSceneLoaded;
         player = GameObject.FindWithTag("Player");
     }
 
@@ -39,21 +41,35 @@ public class GameManager : MonoBehaviour
         {
             curLevelName = levelName;
             SceneManager.LoadScene(levelName);
-
-            if (levelName == "ExternalScene")
-            {
-                player = GameObject.FindGameObjectWithTag("Player");
-                
-                firesLit = 0;
-                
-                
-            }
-                
         }
     }
-    
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "ExternalScene")
+        {
+            player = GameObject.FindWithTag("Player");
+            isPlayerDead = false;
+
+            //Set the mouse cursor to not be visible and locked
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+
+            firesLit = 0;
+        }
+        else
+        {
+            player = null;
+
+            //Set the mouse cursor to be visible and unlocked
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
+    }
+
     //Handle Game State
     [SerializeField] private GameObject player;
+    private bool isPlayerDead = false;
     
     private int firesLit = 0;
     public int FiresToLight { get => 3; }
@@ -80,7 +96,11 @@ public class GameManager : MonoBehaviour
     
     public void PlayerDead()
     {
-        StartCoroutine(PlayerDie());
+        if (!isPlayerDead)
+        {
+            isPlayerDead = true;
+            StartCoroutine(PlayerDie());
+        }
     }
     
     private IEnumerator PlayerDie()
@@ -89,9 +109,11 @@ public class GameManager : MonoBehaviour
         if (player)
         {
             var ui = player.GetComponent<PlayerInteractTextScript>();
+            player.GetComponent<Movement>().enabled = false;
+            player.GetComponent<MouseLook>().enabled = false;
             ui.FadeToBlack();
             ShowStory("You died");
-            yield return new WaitForSeconds(Mathf.Max(ui.fadeSpeed, storyTime));
+            yield return new WaitForSeconds(Mathf.Max(ui.fadeSpeed+1f, storyTime+1f));
             loadLevel("GameOverScene");
         }
     }
@@ -109,14 +131,29 @@ public class GameManager : MonoBehaviour
     private float storyTime = 4.0f;
     private IEnumerator showStoryText( Text text, string story)
     {
-        if (text)
+        try
         {
             text.text = story;
             text.gameObject.SetActive(true);
             text.CrossFadeAlpha(1, 0.5f, false);
-            yield return new WaitForSeconds(storyTime);
+        }
+        catch (MissingReferenceException ex)
+        {
+            Console.WriteLine();
+        }
+
+        yield return new WaitForSeconds(storyTime);
+        
+        try
+        {
             text.CrossFadeAlpha(0, 0.5f, false);
             text.gameObject.SetActive(false);
         }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
     }
+    
+    
 }
