@@ -47,16 +47,19 @@ public class EnemyAudioScript : MonoBehaviour
 
     private IEnumerator PlaySound()
     {
-        //Wait a random amount of time between 2 and 10 seconds and then play a random zombie sound.
-        yield return new WaitForSeconds(Random.Range(2, 10));
-        audioSource.PlayOneShot(enemySounds[Random.Range(1, enemySounds.Length)]);
-        //Set the pitch to a random value between 0.8 and 1.2
-        audioSource.pitch = Random.Range(0.8f, 1.2f);
-        //Set the speed to a random value between 0.8 and 1.2
-        audioSource.volume = Random.Range(0.8f, 1.2f);
+        if (enemyAiScript.State != EnemyAI.EnemyState.Dead)
+        {
+            //Wait a random amount of time between 2 and 10 seconds and then play a random zombie sound.
+            yield return new WaitForSeconds(Random.Range(2, 10));
+            audioSource.PlayOneShot(enemySounds[Random.Range(1, enemySounds.Length)]);
+            //Set the pitch to a random value between 0.8 and 1.2
+            audioSource.pitch = Random.Range(0.8f, 1.2f);
+            //Set the speed to a random value between 0.8 and 1.2
+            audioSource.volume = Random.Range(0.8f, 1.2f);
         
-        //Start the coroutine again
-        playSoundCoroutine = StartCoroutine(PlaySound());
+            //Start the coroutine again
+            playSoundCoroutine = StartCoroutine(PlaySound());    
+        }
     }
 
 }

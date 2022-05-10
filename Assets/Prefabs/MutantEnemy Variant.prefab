@@ -166,6 +166,22 @@ PrefabInstance:
       propertyPath: capsuleCollider
       value: 
       objectReference: {fileID: 1274748955}
+    - target: {fileID: 6546571540711589021, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
+      propertyPath: ammoDropChance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546571540711589021, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
+      propertyPath: ammoDropPrefab
+      value: 
+      objectReference: {fileID: 4161402834780432358, guid: d9ece0237af2bc447882e8ee66c823c8, type: 3}
+    - target: {fileID: 6546571540711589021, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
+      propertyPath: healthDropChance
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546571540711589021, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
+      propertyPath: healthDropPrefab
+      value: 
+      objectReference: {fileID: 99340753925967705, guid: db82d1b6b6168c14c8c418e32a73bf8c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9f0195ee5e52bd469879c656bba9b39, type: 3}
 --- !u!1 &6579273781281791811 stripped

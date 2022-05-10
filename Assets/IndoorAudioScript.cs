@@ -19,16 +19,22 @@ public class IndoorAudioScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //Fade in the audio source
-        _audioSource.volume = 0;
-        _audioSource.Play();
-        StartCoroutine(FadeIn());
+        //Fade in the audio source if the player is inside the collider
+        if (other.gameObject.tag == "Player")
+        {
+            _audioSource.volume = 0;
+            _audioSource.Play();
+            StartCoroutine(FadeIn());
+        }
     }
     
     private void OnTriggerExit(Collider other)
     {
-        //Fade out the audio source
-        StartCoroutine(FadeOut());
+        //Fade out the audio source if the player is outside the collider
+        if (other.gameObject.tag == "Player")
+        {
+            StartCoroutine(FadeOut());
+        }
     }
     
     private IEnumerator FadeIn()
