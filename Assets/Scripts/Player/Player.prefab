@@ -1944,7 +1944,7 @@ MonoBehaviour:
   speed: 11
   runMultiplier: 2
   jumpHeight: 3.5
-  gravity: -30
+  gravity: -1000
   groundMask:
     serializedVersion: 2
     m_Bits: 4294967295
