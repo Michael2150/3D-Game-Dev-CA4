@@ -49,9 +49,4 @@ public class InputManager : MonoBehaviour {
     {
         controls.Enable();
     }
-
-    private void OnDestroy ()
-    {
-        controls.Disable();
-    }
 }

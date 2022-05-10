@@ -10,4 +10,9 @@ public class BlockInteractScript : MonoBehaviour, IInteractable
         Debug.Log("Interacted by: " + sender);
         Destroy(gameObject);
     }
+
+    public string getInteractableText()
+    {
+        return "Press E to break block";
+    }
 }

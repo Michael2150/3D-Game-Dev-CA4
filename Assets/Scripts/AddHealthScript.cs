@@ -14,4 +14,9 @@ public class AddHealthScript : MonoBehaviour, IInteractable
             //remove health
             playerHealth.Health += healthToAdd;
     }
+
+    public string getInteractableText()
+    {
+        return "Press E to pick up health";
+    }
 }

@@ -13,4 +13,9 @@ public class AddAmmoScript : MonoBehaviour, IInteractable
         if (playerWeaponScript)
             playerWeaponScript.ReserveAmmo += ammoToAdd;
     }
+
+    public string getInteractableText()
+    {
+        return "Press E to pick up ammo";
+    }
 }
